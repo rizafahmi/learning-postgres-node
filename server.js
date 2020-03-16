@@ -24,7 +24,6 @@ app.get('/', (req, res) => {
 app.get('/owners', async (req, res) => {
   try {
     const id = parseInt(req.query.id);
-    console.log(id);
     const pets = await db.query(`SELECT * FROM owners WHERE id=${id}`);
     console.log(pets);
     res.json(pets);
